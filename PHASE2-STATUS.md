@@ -47,8 +47,11 @@
 | 10:05 | p2-tools-web | ✅ Web search + fetch working |
 | 10:08 | p2-tools-shell | ✅ Shell execution with safety controls |
 | 10:10 | p2-tools-fileops | ✅ File read/write/edit/list (11/11 tests) |
+| 10:12 | p2-provider-router | ✅ Smart routing Ollama→Claude→Gemini (80% cost savings) |
+| 10:15 | p2-signal | ✅ Signal connector working (232 contacts, send verified) |
 
-## 🎯 P0 TOOLS: ALL COMPLETE ✅
+## 🎯 CHANNELS COMPLETE: WhatsApp + Telegram + Signal ✅
+## 🎯 P0 COMPLETE: Tools + Cloud Fallback ✅
 
 ---
 
