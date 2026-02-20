@@ -28,12 +28,12 @@ Delivers:
 ### Day 0 — TODAY (Feb 20) — Foundation
 | Hour | Task | Owner | Status |
 |------|------|-------|--------|
-| 08:00-10:00 | Verify pre-acquisition fork builds | Agent-Core | ☐ |
-| 10:00-12:00 | Architecture document for standalone | Agent-Core | ☐ |
-| 12:00-14:00 | Set up sprint tracking in repo | Chris | ☐ |
-| 14:00-16:00 | Inventory OpenClaw dependencies | Agent-Core | ☐ |
-| 16:00-18:00 | Design standalone gateway contract | Agent-Core | ☐ |
-| 18:00-20:00 | Ollama integration verification | Agent-Provider | ☐ |
+| 08:34 | Sprint kickoff, agents spawned | Chris | ✅ |
+| 08:35-08:40 | Ollama verification + provider design | Agent-Provider | ✅ |
+| 08:35-08:42 | Architecture doc + dependency analysis | Agent-Core | ✅ |
+| 08:42-08:43 | Channel connector design | Agent-Channel | 🔄 |
+| 08:43 | Smoke tests launched (provider + core) | Smoke Agents | 🔄 |
+| 08:43 | Day 1 gateway implementation STARTED | Impl-Gateway | 🔄 |
 
 ### Day 1 (Feb 21) — Core Runtime
 | Hour | Task | Owner | Status |
