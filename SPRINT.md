@@ -40,13 +40,14 @@ Delivers:
 | 08:52 | Smoke test: Channel layer | Smoke-Channel | 🔄 |
 | 08:52 | WhatsApp connector implementation | Impl-WhatsApp | 🔄 |
 
-### Day 1 (Feb 21) — Core Runtime
+### Day 1 (Feb 21) — Core Runtime **[STARTED EARLY - Feb 20]**
 | Hour | Task | Owner | Status |
 |------|------|-------|--------|
-| 08:00-12:00 | Standalone HTTP gateway (Fastify) | Agent-Core | ☐ |
-| 12:00-16:00 | Session management (SQLite) | Agent-Core | ☐ |
-| 16:00-20:00 | Memory/workspace layer | Agent-Core | ☐ |
-| 20:00-24:00 | Basic CLI entrypoint | Agent-Core | ☐ |
+| Feb 20 08:43 | Standalone HTTP gateway (Fastify) | Impl-Gateway | ✅ DONE |
+| Feb 20 08:46 | Session management (SQLite) | Impl-Gateway | ✅ DONE |
+| Feb 20 08:46 | Basic CLI entrypoint | Impl-Gateway | ✅ DONE |
+| Feb 20 08:55 | Wire gateway to Ollama | Integrate-LLM | 🔄 |
+| TBD | Memory/workspace layer | TBD | ☐ |
 
 ### Day 2 (Feb 22) — LLM Routing
 | Hour | Task | Owner | Status |
