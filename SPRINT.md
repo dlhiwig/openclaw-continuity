@@ -31,9 +31,14 @@ Delivers:
 | 08:34 | Sprint kickoff, agents spawned | Chris | ✅ |
 | 08:35-08:40 | Ollama verification + provider design | Agent-Provider | ✅ |
 | 08:35-08:42 | Architecture doc + dependency analysis | Agent-Core | ✅ |
-| 08:42-08:43 | Channel connector design | Agent-Channel | 🔄 |
-| 08:43 | Smoke tests launched (provider + core) | Smoke Agents | 🔄 |
-| 08:43 | Day 1 gateway implementation STARTED | Impl-Gateway | 🔄 |
+| 08:42-08:52 | Channel connector design (90KB stubs) | Agent-Channel | ✅ |
+| 08:43-08:44 | Smoke test: Provider (Ollama works, TS issues) | Smoke-Provider | ✅ |
+| 08:44-08:45 | Smoke test: Core (Architecture good, TS issues) | Smoke-Core | ✅ |
+| 08:45 | Fix agent: TypeScript config | Fix-TSConfig | 🔄 |
+| 08:45 | Fix agent: Provider types | Fix-Provider-TS | 🔄 |
+| 08:43+ | Day 1 gateway implementation | Impl-Gateway | 🔄 |
+| 08:52 | Smoke test: Channel layer | Smoke-Channel | 🔄 |
+| 08:52 | WhatsApp connector implementation | Impl-WhatsApp | 🔄 |
 
 ### Day 1 (Feb 21) — Core Runtime
 | Hour | Task | Owner | Status |
