@@ -48,6 +48,9 @@ Delivers:
 | Feb 20 08:46 | Basic CLI entrypoint | Impl-Gateway | ✅ DONE |
 | Feb 20 08:55 | Wire gateway to Ollama | Integrate-LLM | ✅ DONE |
 | Feb 20 09:00 | Wire channels to gateway | Integrate-Channels | 🔄 |
+| Feb 20 09:05 | Telegram connector WORKING | Impl-Telegram | ✅ DONE |
+| Feb 20 09:10 | WhatsApp connector WORKING | Impl-WhatsApp | ✅ DONE |
+| Feb 20 09:12 | Gateway blocker fixed | Fix-Gateway-Blocker | ✅ DONE |
 | TBD | Memory/workspace layer | TBD | ☐ |
 
 ### Day 2 (Feb 22) — LLM Routing
