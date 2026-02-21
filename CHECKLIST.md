@@ -1,87 +1,89 @@
-# Continuity Plan Action Checklist
+# OpenClaw Continuity Checklist
 
-## Status Key
-- ☐ Not started
-- 🔄 In progress
-- ✅ Complete
-- ⏸️ Blocked
+## Phase 1: Core Infrastructure ✅
+
+- [x] Gateway (Fastify @ :3737)
+- [x] SQLite session persistence
+- [x] Ollama LLM integration (dolphin-llama3:8b)
+- [x] Telegram connector (grammY)
+- [x] WhatsApp connector (Baileys)
+- [x] Channel → Gateway bridge
+- [x] CLI flags (`--channels`)
+
+**Completed:** 2026-02-20 (45 min vs 6-day plan!)
+
+## Phase 2: Extended Functionality 🔄
+
+### Channels
+- [x] Telegram — @DHiwigBot
+- [x] WhatsApp — +14722089375
+- [x] Signal — signal-cli v0.13.23
+
+### Provider Router
+- [x] Smart router implementation
+- [x] Ollama primary (FREE)
+- [x] Claude fallback
+- [x] Gemini fallback
+
+### Tools
+- [x] file-ops (read/write/list)
+- [x] shell exec (sandboxed)
+- [x] web-search (Brave API)
+- [x] web-fetch (URL extraction)
+
+### Memory
+- [ ] Workspace layer
+- [ ] Conversation memory
+- [ ] Context injection
+
+### Configuration
+- [ ] dotenv API key loading
+- [ ] Environment validation
+
+**Status:** ~80% complete
+
+## Phase 3: SKYNET Integration
+
+- [ ] PULSE heartbeat
+- [ ] GUARDIAN auto-restart
+- [ ] SENTINEL monitoring
+- [ ] ORACLE learning
+- [ ] CORTEX memory
+
+## Phase 4: Production
+
+- [ ] Docker deployment
+- [ ] Systemd service
+- [ ] Health endpoints
+- [ ] Metrics/logging
+- [ ] Documentation
+
+## Technical Decisions
+
+| Decision | Choice | Reason |
+|----------|--------|--------|
+| Runtime | tsx | Better ES module handling |
+| Gateway | Fastify | Cleaner, faster than Express |
+| Sessions | SQLite | Better concurrency than files |
+| Telegram | grammY | Superior TypeScript support |
+| WhatsApp | Baileys | Pure TS, pairing code auth |
+| Signal | signal-cli | Subprocess, text parsing |
+| Primary LLM | Ollama | FREE, local, fast |
+
+## Path Sandboxing
+
+Restricted to:
+- `/tmp`
+- `/home/toba/superclaw`
+- `/home/toba/.openclaw/workspace`
+
+## Repos
+
+| Repo | Purpose |
+|------|---------|
+| dlhiwig/openclaw-continuity | This standalone MVP |
+| dlhiwig/superclaw | Full swarm orchestration |
 
 ---
 
-## Immediate Actions (7 Days)
-
-| # | Action | Owner | Status | Due | Notes |
-|---|--------|-------|--------|-----|-------|
-| 1 | Verify local fork is complete and buildable | Chris | ☐ | Feb 27 | Check `/home/toba/openclaw-source/` |
-| 2 | Document current configuration | Chris | ☐ | Feb 27 | Export all gateway settings |
-| 3 | Archive all skills/plugins locally | Chris | ☐ | Feb 27 | Git commit workspace/skills/ |
-| 4 | Test Ollama-only operation | Chris | ☐ | Feb 27 | No cloud APIs for 1 hour |
-| 5 | Inventory all API keys | Chris | ☐ | Feb 27 | Update TOOLS.md |
-| 6 | Create encrypted credentials backup | Chris | ☐ | Feb 27 | GPG encrypt |
-
----
-
-## Short-Term Actions (30 Days)
-
-| # | Action | Owner | Status | Due | Notes |
-|---|--------|-------|--------|-----|-------|
-| 7 | Evaluate ZeroClaw as primary alternative | Chris | ☐ | Mar 20 | Clone, build, test |
-| 8 | Build SuperClaw standalone mode | Chris | ☐ | Mar 20 | Abstract OpenClaw deps |
-| 9 | Create automated workspace backup | Chris | ☐ | Mar 20 | Daily cron job |
-| 10 | Document migration runbook | Chris | ✅ | Feb 20 | RUNBOOK.md created |
-| 11 | Test full stack on Jetson Orin | Chris | ☐ | Mar 20 | Air-gapped operation |
-
----
-
-## Long-Term Actions (90 Days)
-
-| # | Action | Owner | Status | Due | Notes |
-|---|--------|-------|--------|-----|-------|
-| 12 | Establish relationship with fork maintainers | Daniel | ☐ | May 20 | ZeroClaw, KimiClaw |
-| 13 | Contribute to ZeroClaw | Chris | ☐ | May 20 | Ensure project viability |
-| 14 | Build provider abstraction layer | Chris | ☐ | May 20 | Swap runtimes easily |
-| 15 | Create "escape pod" deployment script | Chris | ☐ | May 20 | One-command migration |
-
----
-
-## Monitoring Tasks (Ongoing)
-
-| Task | Frequency | Last Done | Next Due |
-|------|-----------|-----------|----------|
-| Check OpenClaw repo for license changes | Weekly | — | Feb 27 |
-| Review community fork activity | Weekly | — | Feb 27 |
-| Test fallback provider chain | Monthly | — | Mar 20 |
-| Full backup verification | Monthly | — | Mar 20 |
-| Review this checklist | Weekly | Feb 20 | Feb 27 |
-
----
-
-## Warning Signs Detected
-
-| Date | Indicator | Severity | Action Taken |
-|------|-----------|----------|--------------|
-| Feb 15 | OpenAI acquisition announced | ⚠️ High | Created this plan |
-| — | — | — | — |
-
----
-
-## Decision Log
-
-| Date | Decision | Rationale | Approved By |
-|------|----------|-----------|-------------|
-| Feb 20 | Create continuity plan | Acquisition risk | Daniel |
-| — | — | — | — |
-
----
-
-## Notes
-
-*Add any relevant observations or updates here.*
-
----
-
-## Document History
-
-| Date | Change |
-|------|--------|
-| 2026-02-20 | Initial checklist |
+Last updated: 2026-02-20

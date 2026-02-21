@@ -1,48 +1,97 @@
-# OpenClaw Continuity Plan
+# OpenClaw Continuity 🦊
 
-Strategic resilience planning for OpenClaw operations following the OpenAI acquisition (February 2026).
+**SuperClaw Standalone MVP — OpenClaw-independent runtime**
 
-## Purpose
+## Status: Phase 2 In Progress
 
-This repository documents fallback strategies, migration runbooks, and provider independence measures to ensure zero-downtime capability regardless of upstream changes to OpenClaw.
+### ✅ Phase 1 Complete (45 min vs 6-day plan!)
 
-## Documents
+| Component | Status | Notes |
+|-----------|--------|-------|
+| Gateway | ✅ | Fastify @ http://localhost:3737 |
+| LLM | ✅ | Ollama (dolphin-llama3:8b, ~100ms) |
+| Sessions | ✅ | SQLite persistence with context |
+| Telegram | ✅ | @DHiwigBot via grammY |
+| WhatsApp | ✅ | +14722089375 via Baileys |
 
-| Document | Description |
-|----------|-------------|
-| [CONTINUITY-PLAN.md](./CONTINUITY-PLAN.md) | Full continuity plan |
-| [RUNBOOK.md](./RUNBOOK.md) | Emergency transition procedures |
-| [PROVIDERS.md](./PROVIDERS.md) | Provider independence matrix |
-| [CHECKLIST.md](./CHECKLIST.md) | Action item tracking |
+### 🔄 Phase 2 In Progress
 
-## Quick Reference
+| Component | Status | Agent |
+|-----------|--------|-------|
+| Signal | ✅ Complete | signal-cli v0.13.23 |
+| Smart Router | ✅ Complete | Ollama → Claude → Gemini |
+| Tools | ✅ Complete | file-ops, shell, web-search, web-fetch |
+| Memory Layer | 🔄 Building | Workspace persistence |
+| API Keys | 🔄 Fixing | dotenv loading |
 
-### Fallback Options (Ranked)
-
-1. **Community Fork** — Switch to ZeroClaw/KimiClaw (1-3 days)
-2. **Frozen Fork** — Run pre-acquisition snapshot indefinitely
-3. **SuperClaw Standalone** — Evolve to independent operation (2-4 weeks)
-4. **Full Replacement** — Adopt new framework (1-2 months)
-
-### Emergency Recovery
+## Quick Start
 
 ```bash
-# If OpenClaw stops working (<4 hour recovery)
-git clone https://github.com/theonlyhennygod/zeroclaw.git
-cd zeroclaw && cargo build --release
-./target/release/zeroclaw gateway start
+# Install
+cd /home/toba/superclaw
+npm install
+
+# Start with channels
+npx tsx src/standalone/index.ts --channels telegram
+
+# Or with all channels
+npx tsx src/standalone/index.ts --channels telegram,whatsapp,signal
 ```
 
-## Status
+## Architecture
 
-- **Plan Version:** 1.0
-- **Last Review:** February 20, 2026
-- **Status:** Draft — Pending Approval
+```
+Phone/Telegram/WhatsApp/Signal
+           ↓
+    Channel Connectors
+           ↓
+    Gateway (Fastify:3737)
+           ↓
+    Smart Router
+           ↓
+    Ollama (90%) / Claude / Gemini
+           ↓
+    SQLite Sessions + Tools
+```
 
-## Classification
+## Provider Chain
 
-Internal strategic planning document. Not for public distribution without approval.
+```
+Ollama (FREE, local) → Claude (complex) → Gemini (fallback)
+```
+
+- **Ollama handles ~90% of requests at $0 cost**
+- Cloud fallback for complex reasoning tasks
+
+## Channel Connectors
+
+| Channel | Library | Status |
+|---------|---------|--------|
+| Telegram | grammY | ✅ @DHiwigBot |
+| WhatsApp | Baileys | ✅ +14722089375 |
+| Signal | signal-cli | ✅ subprocess |
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| file-ops | Read/write/list files |
+| shell | Execute commands (sandboxed) |
+| web-search | Brave API search |
+| web-fetch | URL content extraction |
+
+## Path Sandboxing
+
+Tools restricted to:
+- `/tmp`
+- `/home/toba/superclaw`
+- `/home/toba/.openclaw/workspace`
+
+## Related
+
+- [SuperClaw](https://github.com/dlhiwig/superclaw) — Full swarm orchestration
+- [OpenClaw](https://github.com/openclaw/openclaw) — Original project
 
 ---
 
-*Maintained by Black Eagle Project*
+*SKYNET-ALPHA Sprint: Feb 20-26, 2026*
